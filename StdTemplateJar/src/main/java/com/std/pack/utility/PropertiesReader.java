@@ -46,7 +46,7 @@ public class PropertiesReader {
 		Properties props = new Properties();
 		String path = PropertiesReader.class.getProtectionDomain()
 				.getCodeSource().getLocation().toString().replace("%20", " ");
-		System.out.println(">> " + path);
+
 		int i;
 		if (path.substring(6).indexOf(":/") > 0) { // buat windows
 			i = 6;
@@ -55,9 +55,7 @@ public class PropertiesReader {
 		}
 		int p = Utility.parseExtention(path, "/").length();
 		path = path.substring(i);
-		System.out.println(">>1: " + path);
 		path = path.substring(0, path.length() - p - 1);
-		System.out.println(">>2: " + path);
 
 		try {
 			FileInputStream fis = new FileInputStream(new File(path
